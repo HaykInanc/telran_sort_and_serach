@@ -3,11 +3,11 @@ import Product from '../Product'
 import Sort from '../Sort'
 import s from './style.module.sass'
 
-export default function ProductContainer({products}) {
+export default function ProductContainer({products, sort, search}) {
   return (
     
     <div className={s.container}>
-        <Sort />
+        <Sort sort={sort} search={search}/>
         {
             products.map(product => <Product key={product.id} {...product} />)
         }
