@@ -1,8 +1,12 @@
+
 import { useState } from "react";
 import ProductContainer from "../ProductContainer";
+import Nav from '../Nav'
 
 
 function App() {
+
+
   const initialProducts = [
     {id: 1, title: 'велосипед', price: 45000},
     {id: 2, title: 'ролики', price: 15000},
@@ -39,13 +43,15 @@ function App() {
   }
 
   return (
-    <div>
-     <ProductContainer 
-      products={products.filter(({del_flg}) => !del_flg)} 
-      sort={sort} 
-      search={search}
-    />
-    </div>
+    <>
+      <Nav />
+    
+      <ProductContainer 
+        products={products.filter(({del_flg}) => !del_flg)} 
+        sort={sort} 
+        search={search}
+      />
+    </>
   );
 }
 
